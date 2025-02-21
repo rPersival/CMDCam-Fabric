@@ -1,5 +1,7 @@
 package team.creative.cmdcam.common.target;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
@@ -8,8 +10,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import team.creative.cmdcam.client.mixin.ServerLevelAccessor;
 import team.creative.creativecore.common.util.math.vec.Vec3d;
 import team.creative.creativecore.common.util.registry.NamedTypeRegistry;
@@ -96,7 +96,7 @@ public abstract class CamTarget {
         }
         
         @Override
-        @OnlyIn(Dist.CLIENT)
+        @Environment(EnvType.CLIENT)
         public void start(Level level) {
             if (level instanceof ServerLevel)
                 cachedEntity = ((ServerLevelAccessor) level).callGetEntities().get(uuid);
@@ -147,7 +147,7 @@ public abstract class CamTarget {
         protected void loadExtra(CompoundTag nbt) {}
         
         @Override
-        @OnlyIn(Dist.CLIENT)
+        @Environment(EnvType.CLIENT)
         public Vec3d position(Level level, float partialTicks) {
             return new Vec3d(Minecraft.getInstance().player.getEyePosition(partialTicks));
         }
