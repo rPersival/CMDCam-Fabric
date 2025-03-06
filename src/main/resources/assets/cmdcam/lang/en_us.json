@@ -74,5 +74,6 @@
     "scene.save.success": "Scenes saved successfully to '.minecraft/cam-scenes'.",
     "scene.save.error": "Failed to save scenes.",
     "scene.load.success": "Scenes loaded successfully.",
-    "scene.load.error": "Failed to load scenes. Ensure the file exists in '.minecraft/cam-scenes' and is correctly formatted."
+    "scene.load.error": "Failed to load scenes. Ensure the file exists in '.minecraft/cam-scenes' and is correctly formatted.",
+    "scene.reset": "All scenes have been reset."
 }
