@@ -1,10 +1,16 @@
 plugins {
     id 'eclipse'
     id 'idea'
-    id 'fabric-loom' version '1.10-SNAPSHOT'
+    id 'fabric-loom' version '1.14-SNAPSHOT'
     id 'com.diffplug.eclipse.apt' version '3.43.0'
     id 'com.modrinth.minotaur' version '2.+'
     id 'com.matthewprenger.cursegradle' version '1.4+'
+}
+
+loom {
+    mixin {
+        useLegacyMixinAp = true
+    }
 }
 
 repositories {
@@ -49,11 +55,17 @@ dependencies {
 
     modImplementation "net.fabricmc:fabric-loader:${project.property 'fabric_loader_version'}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.property 'fabric_api_version'}"
-    
+
     //implementation project(':CreativeCore')
 
     //minecraftLibrary fg.deobf("curse.maven:minema-resurrection-596719:4816846")
-    modImplementation "curse.maven:creativecore-257814:6374719"
+    modImplementation "curse.maven:creativecore-257814:7436565"
+
+    def plModules = ['base', 'client_events', 'entity', 'registry', 'core', 'item_abilities', 'gui_utils', 'transfer', 'common', 'config', 'loot', 'tags', 'mixin_extensions', 'gametest', 'level_events', 'fluids', 'resources', 'blocks']
+
+    for (final def module in plModules) {
+        modImplementation(include("io.github.fabricators_of_create.Porting-Lib:${module}:3.1.0-beta.85+1.21.1"))
+    }
 }
 
 def resourceTargets = ['META-INF/mods.toml', 'pack.mcmeta', 'fabric.mod.json']
@@ -112,7 +124,7 @@ String getChangelogText() {
             return false
         }
     }
-    
+
     return result
 }
 

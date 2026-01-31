@@ -1,11 +1,14 @@
 package team.creative.cmdcam.common.scene.run;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import java.util.ArrayList;
+import java.util.List;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import team.creative.cmdcam.client.CMDCamClient;
 import team.creative.cmdcam.client.SceneException;
 import team.creative.cmdcam.common.math.interpolation.CamInterpolation;
@@ -18,9 +21,6 @@ import team.creative.cmdcam.common.scene.CamScene;
 import team.creative.cmdcam.common.scene.attribute.CamAttribute;
 import team.creative.cmdcam.common.scene.timer.RealTimeTimer;
 import team.creative.cmdcam.common.scene.timer.RunTimer;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Environment(EnvType.CLIENT)
 public class CamRun {
@@ -47,7 +47,7 @@ public class CamRun {
             CamPoints points = new CamPoints();
             CamPoint camPoint = CamPoint.create(camera);
             try {
-                CMDCamClient.PROCESSOR_CLIENT.makeRelative(scene, level, camPoint);
+                CMDCamClient.PROCESSOR.makeRelative(scene, level, camPoint);
             } catch (SceneException e) {}
             points.add(camPoint);
             points.add(scene.points.get(0).copy());

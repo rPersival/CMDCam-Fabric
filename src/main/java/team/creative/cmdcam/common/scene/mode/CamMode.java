@@ -30,19 +30,19 @@ public abstract class CamMode {
     public Component title() {
         return Component.translatable("cam.mode." + REGISTRY.getId(this));
     }
-
+    
     @Environment(EnvType.CLIENT)
     public void started(CamRun run) {}
-
+    
     @Environment(EnvType.CLIENT)
     public void finished(CamRun run) {
         CamEventHandlerClient.resetFOV();
         CamEventHandlerClient.resetRoll();
     }
-
+    
     @Environment(EnvType.CLIENT)
     public abstract Entity getCamera();
-
+    
     @Environment(EnvType.CLIENT)
     public void process(CamPoint point) {
         CamEventHandlerClient.roll((float) point.roll);
@@ -59,7 +59,7 @@ public abstract class CamMode {
     }
     
     public abstract boolean outside();
-
+    
     @Environment(EnvType.CLIENT)
     public void correctTargetPosition(Vec3d vec) {}
     
