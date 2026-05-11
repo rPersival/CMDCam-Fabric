@@ -26,5 +26,6 @@ build/
 
 .gradle/
 .idea/
+.idea/compiler.xml
 
 !/gradle/wrapper/gradle-wrapper.jar
