@@ -1,4 +1,4 @@
-package io.github.fabricators_of_create.porting_lib.event.client;
+package team.creative.cmdcam.client.event;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

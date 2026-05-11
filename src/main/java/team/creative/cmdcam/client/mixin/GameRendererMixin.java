@@ -2,7 +2,7 @@ package team.creative.cmdcam.client.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
-import io.github.fabricators_of_create.porting_lib.event.client.FieldOfViewEvents;
+import team.creative.cmdcam.client.event.FieldOfViewEvents;
 import net.minecraft.client.Camera;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.renderer.GameRenderer;

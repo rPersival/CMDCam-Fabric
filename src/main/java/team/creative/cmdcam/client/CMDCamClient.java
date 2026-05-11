@@ -2,8 +2,8 @@ package team.creative.cmdcam.client;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
-import io.github.fabricators_of_create.porting_lib.event.client.FieldOfViewEvents;
-import io.github.fabricators_of_create.porting_lib.event.client.RenderFrameEvent;
+import team.creative.cmdcam.client.event.FieldOfViewEvents;
+import team.creative.cmdcam.client.event.RenderFrameEvent;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
